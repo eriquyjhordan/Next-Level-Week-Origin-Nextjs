@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
+:root {
+  --brand-green: #00856f;
+  --brand-green-light: #dce9e2;
+  --brand-green-light-02: #f7f9f9;
+  --brand-beige: #fffaf1;
+  --brand-green-hover: #00453a;
+  --gray-headline: #061800;
+  --gray-paragraph: #384633;
+  --white: #3e3e3e;
+}
+
 * {
   font-family: "DM Sans", sans-serif;
+}
+
+body {
+  font-size: 62.5%;
 }

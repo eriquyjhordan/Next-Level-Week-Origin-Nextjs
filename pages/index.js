@@ -9,7 +9,16 @@ export default function Home() {
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.title}>Welcome to Next.js!</h1>
+      <header>
+        <div className={styles.navBar}>
+          <img src="/Logo.svg" alt="Doctor Care logo" />
+          <div>
+            <a href="/">
+              <img src="/menu-icon.svg" alt="menu button" />
+            </a>
+          </div>
+        </div>
+      </header>
     </>
   );
 }
