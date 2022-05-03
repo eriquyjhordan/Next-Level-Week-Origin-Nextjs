@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 .wrapper {
-  padding: 0 2.4rem;
+  padding-inline: 2.4rem;
 }
 
 .navBar {
@@ -8,24 +8,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.7rem 2.4rem;
+  height: var(--nav-height);
   background-color: var(--brand-green-light);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.menuExpanded {
+  background-color: var(--brand-green);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menuExpanded div svg path {
+  stroke: white;
+}
+
+.menuExpanded svg:nth-child(1) path {
+  fill: white;
 }
 
 div.headerContainer::before {
   content: "";
   width: 100vw;
-  height: 108rem;
+  height: calc(108rem + var(--nav-height));
   background-color: var(--brand-green-light);
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  margin-top: 7.2rem;
 }
 
 .headerContainer h4 {
-  margin-top: 4rem;
+  margin-top: calc(4rem + var(--nav-height));
   color: var(--brand-green);
   line-height: 2.1rem;
   text-align: center;
