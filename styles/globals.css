@@ -9,6 +9,8 @@
   --gray-headline: #061800;
   --gray-paragraph: #384633;
   --white: #3e3e3e;
+
+  font-size: 62.5% !important;
 }
 
 * {
@@ -17,4 +19,8 @@
 
 body {
   overflow-x: hidden;
+  box-sizing: border-box !important;
+  font-size: 1.6rem;
+  height: 100%;
+  width: 100%;
 }

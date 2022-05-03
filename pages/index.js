@@ -1,8 +1,17 @@
 import Head from "next/head";
+import { useEffect } from "react";
 
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  // listen for scroll event
+  // const handleScroll = () => {
+  //   console.log(window.scrollY > 0);
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
   return (
     <>
       <Head>
@@ -10,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <div className={styles.navBar}>
+        <div className={`${styles.navBar} ${styles.wrapper}`}>
           <img src="/Logo.svg" alt="Doctor Care logo" />
           <div>
             <a href="/">
@@ -18,9 +27,11 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className={styles.headerContainer}>
+        <div className={`${styles.headerContainer} ${styles.wrapper}`}>
           <h4>BOAS-VINDAS A DOCTORCARE 👋</h4>
-          <h1>Assistência médica simplificada para todos</h1>
+          <h1>
+            Assistência médica <br /> simplificada para <br /> todos
+          </h1>
           <h2>
             Os médicos da DoctorCare vão além dos sintomas para tratar a causa
             raiz de sua doença e proporcionar uma cura a longo prazo.
