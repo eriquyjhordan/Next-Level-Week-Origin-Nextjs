@@ -181,18 +181,24 @@ div.headerContainer::before {
   margin-top: 0.4rem;
 }
 
-.mainContainer {
-  margin-top: 23rem;
-  text-align: center;
-  padding: 0 2.4rem;
+.services::before {
+  position: absolute;
+  top: calc(108rem + var(--nav-height));
+  left: 0;
+  z-index: -1;
+  content: "";
+  width: 100%;
+  height: 203.4rem;
   background-color: var(--brand-green-light-02);
 }
 
-.services p {
+.services h4 {
+  margin-top: 9.9rem;
   font-size: 1.4rem;
   line-height: 2.1rem;
   font-weight: 700;
   color: var(--brand-green);
+  text-align: center;
 }
 
 .services h2 {
@@ -201,4 +207,5 @@ div.headerContainer::before {
   font-weight: 700;
   color: var(--gray-headline);
   margin-top: 1.6rem;
+  text-align: center;
 }

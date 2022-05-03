@@ -222,18 +222,14 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/* <main>
-        <div className={styles.mainContainer}>
-          <div className={styles.mainContent}>
-            <div className={styles.services}>
-              <p>Serviços</p>
-              <h2>
-                Como podemos <br /> ajudá-lo a se sentir <br /> melhor?
-              </h2>
-            </div>
-          </div>
-        </div>
-      </main> */}
+      <main className={styles.wrapper}>
+        <section className={styles.services}>
+          <h4>Serviços</h4>
+          <h2>
+            Como podemos <br /> ajudá-lo a se sentir <br /> melhor?
+          </h2>
+        </section>
+      </main>
     </>
   );
 }
