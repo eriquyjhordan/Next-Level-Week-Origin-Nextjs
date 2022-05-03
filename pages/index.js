@@ -3,8 +3,33 @@ import { useEffect, useState } from "react";
 
 import styles from "../styles/Home.module.css";
 
+const socialLinks = {
+  instagram: {
+    imgage: {
+      src: "/instagram-icon.svg",
+      alt: "Link para o Instagram",
+      link: "https://www.instagram.com/eriquyjhordan/",
+    },
+  },
+  facebook: {
+    imgage: {
+      src: "/facebook-icon.svg",
+      alt: "Link para o Facebook",
+      link: "https://www.facebook.com/eriquyjhordan",
+    },
+  },
+  youtube: {
+    imgage: {
+      src: "/youtube-icon.svg",
+      alt: "Link para o Youtube",
+      link: "https://www.youtube.com/eriquyjhordan",
+    },
+  },
+};
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [expadedMenu, setExpandedMenu] = useState(false);
   const handleScroll = () => {
     window.scrollY > 0 ? setIsScrolled(true) : setIsScrolled(false);
   };
@@ -21,10 +46,10 @@ export default function Home() {
       <header>
         <div
           className={`${styles.navBar} ${styles.wrapper} ${
-            isScrolled ? styles.menuExpanded : ""
+            isScrolled ? styles.scrolledMenu : ""
           }`}
         >
-          <a href="#">
+          <a href="#" className={expadedMenu ? styles.logoExpadend : ""}>
             <svg
               width="133"
               height="18"
@@ -74,9 +99,62 @@ export default function Home() {
               />
             </svg>
           </a>
+          {expadedMenu && (
+            <div className={styles.expadedMenu}>
+              <div className={styles.closeButton}>
+                <button onClick={() => setExpandedMenu(false)}>
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30 10L10 30M10 10L30 30"
+                      stroke="#FFFAF1"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <ul className={styles.expadedNavigation}>
+                <li>
+                  <a href="#">Início</a>
+                </li>
+                <li>
+                  <a href="#">Serviços</a>
+                </li>
+                <li>
+                  <a href="#">Sobre</a>
+                </li>
+              </ul>
+              <div className={styles.consultButton}>
+                <a href="#">Agende sua consulta</a>
+              </div>
+
+              <ul className={styles.socialLinks}>
+                {Object.entries(socialLinks).map(([key, value]) => {
+                  return (
+                    <li key={key}>
+                      <a
+                        href={value.imgage.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={value.imgage.src} alt={value.imgage.alt} />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
 
           <div>
-            <a href="/">
+            <button type="button" onClick={() => setExpandedMenu(true)}>
               <svg
                 width="40"
                 height="40"
@@ -106,7 +184,7 @@ export default function Home() {
                   stroke-linejoin="round"
                 />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
         <div className={`${styles.headerContainer} ${styles.wrapper}`}>
