@@ -31,7 +31,7 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [expadedMenu, setExpandedMenu] = useState(false);
   const handleScroll = () => {
-    window.scrollY > 0 ? setIsScrolled(true) : setIsScrolled(false);
+    window.scrollY > 50 ? setIsScrolled(true) : setIsScrolled(false);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
